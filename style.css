@@ -1,8 +1,6 @@
 * {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .body {
@@ -23,12 +21,14 @@ a {
   background-repeat: no-repeat;
   background-position: 63px 69px, 100% 0px, calc(100% - 344px) calc(100% - 149px);
   background-color: #E1FF8F;
+  height: 800px;
 }
 .header__text-big {
   font-size: 64px;
   line-height: 78px;
   color: #202027;
   padding-top: 196px;
+  max-width: 768px;
 }
 .header__text-subtitle {
   font-size: 24px;
@@ -36,6 +36,7 @@ a {
   color: #202027;
   padding-top: 24px;
   font-weight: 400;
+  max-width: 720px;
 }
 .header__text-font {
   font-size: 24px;
@@ -50,9 +51,8 @@ a {
   width: 247px;
   height: 66px;
   font-size: 24px;
-  margin-top: 48px;
-  margin-bottom: 246px;
   font-family: Montserrat;
+  margin-top: 48px;
 }
 .header__button:hover {
   background: white;
@@ -62,7 +62,7 @@ a {
 
 .card-game {
   background-color: #000000;
-  padding-bottom: 50px;
+  height: 1470px;
   background-image: url(./img/Star4.png), url(./img/star5.png);
   background-repeat: no-repeat;
   background-position: 100% 77px, 25px 770px;
@@ -78,6 +78,7 @@ a {
   padding-top: 24px;
   font-size: 24px;
   line-height: 32px;
+  max-width: 788px;
 }
 .card-game__card {
   display: grid;
@@ -85,7 +86,6 @@ a {
   height: 1056px;
   gap: 32px;
   padding-top: 72px;
-  width: 1021px;
 }
 .card-game__card_game1 {
   height: 473px;
@@ -193,4 +193,320 @@ a {
   text-decoration: none;
   padding-left: 32px;
   font-weight: 700;
+}
+
+.mini-game {
+  height: 3500px;
+  background-color: #000000;
+  background-image: url(./img/Group1minigame.png), url(./img/Group2minigame.png);
+  background-position: 1281px 93px, 1249px calc(100% - 45px);
+  background-repeat: no-repeat;
+}
+.mini-game__text {
+  color: #FFFFFF;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 78px;
+  padding-top: 46px;
+}
+.mini-game__card {
+  padding-top: 72px;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+}
+.mini-game__card_content-left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-top: 48px;
+  padding-left: 48px;
+  gap: 24px;
+}
+.mini-game__card_content-right {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-left: 648px;
+  padding-top: 48px;
+  gap: 24px;
+}
+.mini-game__card_guess {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/guess.png);
+  background-repeat: no-repeat;
+  background-position: 600px 100%;
+}
+.mini-game__card_arithmetic {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/arithmetic.png);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+.mini-game__card_textover {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/textover.png);
+  background-repeat: no-repeat;
+  background-position: 600px 100%;
+}
+.mini-game__card_quiz {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/quiz.png);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+.mini-game__card_stone {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/stone.png);
+  background-repeat: no-repeat;
+  background-position: 600px 100%;
+}
+.mini-game__card_random {
+  max-width: 1200px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  background-image: url(./img/random.png);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+.mini-game__card_leftname {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 59px;
+  color: rgb(32, 32, 39);
+}
+.mini-game__card_leftdescription {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  max-width: 457px;
+}
+.mini-game__card_leftbutton {
+  border-radius: 60px;
+  background: rgb(32, 32, 39);
+  width: 247px;
+  height: 66px;
+  margin-top: 12px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+}
+.mini-game__card_leftbutton:hover {
+  background: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+}
+.mini-game__card_rightname {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 59px;
+  color: rgb(32, 32, 39);
+}
+.mini-game__card_rightdescription {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  max-width: 497px;
+}
+.mini-game__card_rightbutton {
+  border-radius: 60px;
+  background: rgb(32, 32, 39);
+  width: 247px;
+  height: 66px;
+  margin-top: 12px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+}
+.mini-game__card_rightbutton:hover {
+  background: #FFFFFF;
+  color: #000000;
+  cursor: pointer;
+}
+
+.footer {
+  height: 150px;
+  background: #BDED35;
+}
+.footer__text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+  padding-top: 61px;
+}
+
+@media (max-width: 768px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    background-image: none;
+    max-height: 700px;
+    background-image: url(./img/starGroup1.png), url(./img/starGroup2.png), url(./img/Starmob3.png);
+    background-repeat: no-repeat;
+    background-position: 37px 64px, 272px 557px, 215px -20%;
+  }
+  .header__text-big {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+    text-align: center;
+    padding-top: 147px;
+  }
+  .header__text-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 24px;
+  }
+  .header__text-font {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  .header__button {
+    width: 285px;
+    height: 55px;
+    padding: 16px 28px 16px 28px;
+    margin: 36px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .card-game {
+    display: none;
+  }
+  .mini-game {
+    height: 3740px;
+  }
+  .mini-game__text {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+    padding-top: 48px;
+  }
+  .mini-game__card {
+    padding-top: 48px;
+    gap: 24px;
+  }
+  .mini-game__card_content-left {
+    padding-top: 314px;
+    padding-left: 29px;
+    gap: 16px;
+    max-width: 285px;
+  }
+  .mini-game__card_content-right {
+    padding-top: 314px;
+    padding-left: 29px;
+    gap: 16px;
+    max-width: 285px;
+  }
+  .mini-game__card_guess {
+    max-width: 343px;
+    height: 529px;
+    background-image: none;
+    background-image: url(./img/mob1.png);
+    background-position: 100% calc(100% - 244px);
+  }
+  .mini-game__card_arithmetic {
+    max-width: 343px;
+    height: 568px;
+    background-image: none;
+    background-image: url(./img/mob2.png);
+    background-position: 100% calc(100% - 283px);
+  }
+  .mini-game__card_textover {
+    max-width: 343px;
+    height: 568px;
+    background-image: none;
+    background-image: url(./img/mob3.png);
+    background-position: 100% calc(100% - 283px);
+  }
+  .mini-game__card_quiz {
+    max-width: 343px;
+    height: 529px;
+    background-image: none;
+    background-image: url(./img/mob4.png);
+    background-position: 100% calc(100% - 244px);
+  }
+  .mini-game__card_stone {
+    max-width: 343px;
+    height: 607px;
+    background-image: none;
+    background-image: url(./img/mob5.png);
+    background-position: 100% calc(100% - 322px);
+  }
+  .mini-game__card_random {
+    max-width: 343px;
+    height: 627px;
+    background-image: none;
+    background-image: url(./img/mob6.png);
+    background-position: 100% calc(100% - 342px);
+  }
+  .mini-game__card_leftname {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+  }
+  .mini-game__card_leftdescription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    max-width: 249px;
+  }
+  .mini-game__card_leftbutton {
+    width: 285px;
+    height: 55px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .mini-game__card_rightname {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+  }
+  .mini-game__card_rightdescription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .mini-game__card_rightbutton {
+    width: 285px;
+    height: 55px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .footer {
+    height: 100px;
+  }
+  .footer__text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    padding-top: 40px;
+  }
 }/*# sourceMappingURL=style.css.map */
