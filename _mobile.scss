@@ -1,0 +1,188 @@
+@media (max-width: 768px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px; 
+    }
+
+
+    .header {
+
+        background-image: none;
+        max-height: 700px;
+        background-image: url(./img/starGroup1.png), url(./img/starGroup2.png), url(./img/Starmob3.png);
+        background-repeat: no-repeat;
+        background-position: 37px 64px, 272px 557px, 215px -20%;
+
+        &__text-big {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 49px;
+            text-align: center;
+            padding-top: 147px;
+        }
+
+        &__text-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+            padding-top: 24px;
+        }
+
+        &__text-font {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+
+        &__button {
+            width: 285px;
+            height: 55px;
+            padding: 16px 28px 16px 28px;
+            margin: 36px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+
+    }
+
+    
+    .card-game {
+        display: none;
+    }
+
+    .mini-game {
+        height: 3740px;
+
+        &__text {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 49px;
+            padding-top: 48px;
+        }
+
+        &__card {
+            padding-top: 48px;
+            gap: 24px;
+
+            &_content-left {
+                padding-top: 314px;
+                padding-left: 29px;
+                gap: 16px;
+                max-width: 285px;
+            }
+
+            &_content-right {
+                padding-top: 314px;
+                padding-left: 29px;
+                gap: 16px;
+                max-width: 285px;
+            }
+
+            &_guess {
+                max-width: 343px;
+                height: 529px;
+                background-image: none;
+                background-image: url(./img/mob1.png);
+                background-position: 100% calc(100% - 244px);
+            }
+
+            &_arithmetic {
+                max-width: 343px;
+                height: 568px;
+                background-image: none;
+                background-image: url(./img/mob2.png);
+                background-position: 100% calc(100% - 283px);
+            }
+
+            &_textover {
+                max-width: 343px;
+                height: 568px;
+                background-image: none;
+                background-image: url(./img/mob3.png);
+                background-position: 100% calc(100% - 283px);
+            }
+
+            &_quiz {
+                max-width: 343px;
+                height: 529px;
+                background-image: none;
+                background-image: url(./img/mob4.png);
+                background-position: 100% calc(100% - 244px);
+            }
+
+            &_stone {
+                max-width: 343px;
+                height: 607px;
+                background-image: none;
+                background-image: url(./img/mob5.png);
+                background-position: 100% calc(100% - 322px);
+            }
+
+            &_random {
+                max-width: 343px;
+                height: 627px;
+                background-image: none;
+                background-image: url(./img/mob6.png);
+                background-position: 100% calc(100% - 342px);
+            }
+
+            &_leftname {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 39px;
+            }
+
+            &_leftdescription {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                max-width: 249px;
+            }
+
+            &_leftbutton {
+                width: 285px;
+                height: 55px;
+                margin-top: 16px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &_rightname {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 39px;   
+            }
+
+            &_rightdescription {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;   
+            }
+
+            &_rightbutton {
+                width: 285px;
+                height: 55px;
+                margin-top: 16px; 
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+
+
+.footer {
+    height: 100px;
+
+    &__text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        padding-top: 40px;
+    }
+}
+
+
+}
+
