@@ -23,14 +23,19 @@ a {
   background-color: #E1FF8F;
   height: 800px;
 }
-.header__text-big {
+.header__text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.header__text_big {
   font-size: 64px;
   line-height: 78px;
   color: #202027;
   padding-top: 196px;
   max-width: 768px;
 }
-.header__text-subtitle {
+.header__text_subtitle {
   font-size: 24px;
   line-height: 32px;
   color: #202027;
@@ -38,7 +43,7 @@ a {
   font-weight: 400;
   max-width: 720px;
 }
-.header__text-font {
+.header__text_font {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
@@ -368,21 +373,26 @@ a {
     background-repeat: no-repeat;
     background-position: 37px 64px, 272px 557px, 215px -20%;
   }
-  .header__text-big {
+  .header__text {
+    align-items: center;
+  }
+  .header__text_big {
     font-size: 40px;
     font-weight: 700;
     line-height: 49px;
     text-align: center;
     padding-top: 147px;
+    max-width: 296px;
   }
-  .header__text-subtitle {
+  .header__text_subtitle {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
     padding-top: 24px;
+    max-width: 296px;
   }
-  .header__text-font {
+  .header__text_font {
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
@@ -391,7 +401,6 @@ a {
     width: 285px;
     height: 55px;
     padding: 16px 28px 16px 28px;
-    margin: 36px;
     font-size: 16px;
     font-weight: 600;
   }
@@ -410,18 +419,23 @@ a {
   .mini-game__card {
     padding-top: 48px;
     gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
   }
   .mini-game__card_content-left {
     padding-top: 314px;
     padding-left: 29px;
     gap: 16px;
     max-width: 285px;
+    flex-wrap: wrap;
+    padding-right: 29px;
   }
   .mini-game__card_content-right {
     padding-top: 314px;
     padding-left: 29px;
     gap: 16px;
     max-width: 285px;
+    padding-right: 29px;
   }
   .mini-game__card_guess {
     max-width: 343px;

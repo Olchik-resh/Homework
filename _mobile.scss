@@ -2,8 +2,8 @@
     .center {
         padding-left: 16px;
         padding-right: 16px; 
+      
     }
-
 
     .header {
 
@@ -13,39 +13,45 @@
         background-repeat: no-repeat;
         background-position: 37px 64px, 272px 557px, 215px -20%;
 
-        &__text-big {
-            font-size: 40px;
-            font-weight: 700;
-            line-height: 49px;
-            text-align: center;
-            padding-top: 147px;
-        }
+&__text {
+    
+    align-items: center;
 
-        &__text-subtitle {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 20px;
-            text-align: center;
-            padding-top: 24px;
-        }
-
-        &__text-font {
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 20px;
-        }
-
-        &__button {
-            width: 285px;
-            height: 55px;
-            padding: 16px 28px 16px 28px;
-            margin: 36px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-
+    &_big {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 49px;
+        text-align: center;
+        padding-top: 147px;
+        max-width: 296px;
     }
+
+    &_subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 24px;
+        max-width: 296px;
+        
+    }
+
+    &_font {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+}
+
+    &__button {
+        width: 285px;
+        height: 55px;
+        padding: 16px 28px 16px 28px;
+        
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
 
     
     .card-game {
@@ -65,12 +71,16 @@
         &__card {
             padding-top: 48px;
             gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
 
             &_content-left {
                 padding-top: 314px;
                 padding-left: 29px;
                 gap: 16px;
                 max-width: 285px;
+                flex-wrap: wrap;
+                padding-right: 29px;
             }
 
             &_content-right {
@@ -78,6 +88,7 @@
                 padding-left: 29px;
                 gap: 16px;
                 max-width: 285px;
+                padding-right: 29px;
             }
 
             &_guess {
