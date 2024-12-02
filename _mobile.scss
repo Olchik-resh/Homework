@@ -59,13 +59,13 @@
     }
 
     .mini-game {
-        height: 3740px;
+        padding-top: 48px;
+        padding-bottom: 48px;
 
         &__text {
             font-size: 40px;
             font-weight: 700;
             line-height: 49px;
-            padding-top: 48px;
         }
 
         &__card {
@@ -73,111 +73,35 @@
             gap: 24px;
             flex-wrap: wrap;
             align-items: center;
+        }
 
-            &_content-left {
-                padding-top: 314px;
-                padding-left: 29px;
+        .card {
+            display: flex;
+            max-width: 343px;
+            flex-direction: column;
+            height: auto;
+
+            &-content {
+                padding: 29.04px 29.04px 32.67px 29.04px;
                 gap: 16px;
-                max-width: 285px;
-                flex-wrap: wrap;
-                padding-right: 29px;
-            }
 
-            &_content-right {
-                padding-top: 314px;
-                padding-left: 29px;
-                gap: 16px;
-                max-width: 285px;
-                padding-right: 29px;
-            }
+                &__name {
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 39px;
+                }
 
-            &_guess {
-                max-width: 343px;
-                height: 529px;
-                background-image: none;
-                background-image: url(./img/mob1.png);
-                background-position: 100% calc(100% - 244px);
-            }
+                &__description {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
 
-            &_arithmetic {
-                max-width: 343px;
-                height: 568px;
-                background-image: none;
-                background-image: url(./img/mob2.png);
-                background-position: 100% calc(100% - 283px);
-            }
-
-            &_textover {
-                max-width: 343px;
-                height: 568px;
-                background-image: none;
-                background-image: url(./img/mob3.png);
-                background-position: 100% calc(100% - 283px);
-            }
-
-            &_quiz {
-                max-width: 343px;
-                height: 529px;
-                background-image: none;
-                background-image: url(./img/mob4.png);
-                background-position: 100% calc(100% - 244px);
-            }
-
-            &_stone {
-                max-width: 343px;
-                height: 607px;
-                background-image: none;
-                background-image: url(./img/mob5.png);
-                background-position: 100% calc(100% - 322px);
-            }
-
-            &_random {
-                max-width: 343px;
-                height: 627px;
-                background-image: none;
-                background-image: url(./img/mob6.png);
-                background-position: 100% calc(100% - 342px);
-            }
-
-            &_leftname {
-                font-size: 32px;
-                font-weight: 700;
-                line-height: 39px;
-            }
-
-            &_leftdescription {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 20px;
-                max-width: 249px;
-            }
-
-            &_leftbutton {
-                width: 285px;
-                height: 55px;
-                margin-top: 16px;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            &_rightname {
-                font-size: 32px;
-                font-weight: 700;
-                line-height: 39px;   
-            }
-
-            &_rightdescription {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 20px;   
-            }
-
-            &_rightbutton {
-                width: 285px;
-                height: 55px;
-                margin-top: 16px; 
-                font-size: 16px;
-                font-weight: 600;
+                &__button {
+                    width: 285px;
+                    height: 55px;
+                    margin-top: 16px;
+                }
             }
         }
     }

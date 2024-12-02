@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.html {
+    scroll-behavior: smooth;
+}
+
 $primary-color: #E1FF8F;
 $colorText:  #202027; 
 
@@ -82,20 +86,19 @@ a {
 
 .card-game {
     background-color: #000000;
-    height: 1470px;
     background-image: url(./img/Star4.png), url(./img/star5.png);
     background-repeat: no-repeat;
     background-position: 100% 77px, 25px 770px;
 
     &__text {
-        &-top {
+        &_top {
             color: white;
             padding-top: 94px;
             font-size: 64px;
             line-height: 78px;
         }
 
-        &-susubtitle {
+        &-subtitle {
             color: #FFFFFF;
             padding-top: 24px;
             font-size: 24px;
@@ -103,150 +106,137 @@ a {
             max-width: 788px;
         }
     }
+}
+
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding-top: 72px;
 
     &__card {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        height: 1056px;
-        gap: 32px;
-        padding-top: 72px;
-       
-        &_game1 {
+        grid-column: span 4;
+        border-radius: 30px;
+        
+    
+        &_one {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 473px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/Game1.png);
-            background-position: 100% calc(100% - 159px);
-            background-repeat: no-repeat;
         }
 
-        &_game1:hover {
+        &_one:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_game2 {
+        &_two {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 512px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game2.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 198px);
         }
 
-        &_game2:hover {
+        &_two:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_game3 {
+        &_three {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 473px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game3.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 159px);
         }
 
-        &_game3:hover {
+        &_three:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_game4 {
+        &_four {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 551px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
             margin-top: -39px;
-            background-image: url(./img/game4.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 237px);
         }
 
-        &_game4:hover {
+        &_four:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_game5 {
+        &_five {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 512px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game5.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 198px);
         }
 
-        &_game5:hover {
+        &_five:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_game6 {
+        &_six {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
             height: 551px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
             margin-top: -39px;
-            background-image: url(./img/game6.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 237px);
         }
 
-        &_game6:hover {
+        &_six:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_namber {
-            color: #202027;
-            margin-top: 354px;
-            margin-left: 32px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 52.58px;
-            background: rgb(247, 247, 247);
-            width: 108px;
-            padding: 8px 16px 10px 16px;
-            text-align: center;
-        }
-
-        &_name {
-            font-size: 32px;
-            line-height: 39px;
-            padding-top: 16px;
-            color: #202027;
-            text-decoration: none;
-            padding-left: 32px;
-            font-weight: 700;
-        }
     }
+}     
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 32px 32px 36px 32px;
+    gap: 16px;
+    
+    &__namber {
+        color: #202027;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 52.58px;
+        width: 108px;
+        padding: 8px 16px 10px 16px;
+        text-align: center;
+        background-color: #F7F7F7;
+    }
+
+    &__name {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 39px;
+        color: #202027;
+    }
+
 }
 
 .mini-game {
-    height: 3500px;
     background-color: #000000;
     background-image: url(./img/Group1minigame.png), url(./img/Group2minigame.png);
     background-position: 1281px 93px, 1249px calc(100% - 45px);
     background-repeat: no-repeat;
-
+    padding-top: 98px;
+    padding-bottom: 144px;
+    
     &__text {
         color: #FFFFFF;
         font-size: 64px;
         font-weight: 700;
         line-height: 78px;
-        padding-top: 46px;
     }
 
     &__card {
@@ -255,155 +245,61 @@ a {
         gap: 32px;
         flex-direction: column;
 
-        &_content-left {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            padding-top: 48px;
-            padding-left: 48px;
-            gap: 24px;
-        }
-
-        &_content-right {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            padding-left: 648px;
-            padding-top: 48px;
-            gap: 24px;
-
-        }
-
-        &_guess {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/guess.png);
-            background-repeat: no-repeat;
-            background-position: 600px 100%;
-        }
-
-        &_arithmetic {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/arithmetic.png);
-            background-repeat: no-repeat;
-            background-position: 0 100%;
-        }
-
-        &_textover {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/textover.png);
-            background-repeat: no-repeat;
-            background-position: 600px 100%;
-        }
-
-        &_quiz {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/quiz.png);
-            background-repeat: no-repeat;
-            background-position: 0 100%;
-        }
-
-        &_stone {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/stone.png);
-            background-repeat: no-repeat;
-            background-position: 600px 100%;
-        }
-
-        &_random {
-            max-width: 1200px;
-            height: 500px;
-            background: #FFFFFF;
-            border-radius: 30px;
-            background-image: url(./img/random.png);
-            background-repeat: no-repeat;
-            background-position: 0 100%;
-        }
-
-        &_leftname {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 59px;
-            color: rgb(32, 32, 39);
-        }
-
-        &_leftdescription {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 32px;
-            max-width: 457px;
-        }
-
-        &_leftbutton {
-            border-radius: 60px;
-            background: rgb(32, 32, 39);
-            width: 247px;
-            height: 66px;
-            margin-top: 12px;
-            color: rgb(255, 255, 255);
-            font-family: Montserrat;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        &_leftbutton:hover {
-            background: #FFFFFF;
-            color: #000000;
-            cursor: pointer;
-        }
-
-        &_rightname {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 59px;
-            color: rgb(32, 32, 39);
-        }
-
-        &_rightdescription {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 32px;
-            max-width: 497px;
-        }
-
-        &_rightbutton {
-            border-radius: 60px;
-            background: rgb(32, 32, 39);
-            width: 247px;
-            height: 66px;
-            margin-top: 12px;
-            color: rgb(255, 255, 255);
-            font-family: Montserrat;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        &_rightbutton:hover {
-            background: #FFFFFF;
-            color: #000000;
-            cursor: pointer;
-        }
     }
+
+    .card {
+        max-width: 1200px;
+        height: 500px;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        display: flex;
+        
+
+            &__left {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                gap: 24px;
+                padding: 48px;
+                max-width: 505px;
+
+                &__name {
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 59px;
+                    color: rgb(32, 32, 39);
+                }
+
+                &__description {
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 32px;
+                    color: #202027;
+                }
+
+                &__button {
+                    border-radius: 60px;
+                    background: rgb(32, 32, 39);
+                    width: 247px;
+                    height: 66px;
+                    margin-top: 12px;
+                    color: rgb(255, 255, 255);
+                    font-family: Montserrat;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+    }       
 }
 
 .footer {
-    height: 150px;
     background: #BDED35;
 
     &__text {
@@ -412,15 +308,8 @@ a {
         line-height: 29px;
         text-align: center;
         padding-top: 61px;
+        padding-bottom: 60px;
     }
 }
 
-
-
-
 @import 'mobile';
-
-
-
-
-

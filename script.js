@@ -33,10 +33,7 @@ if (d > 100 || e > 100) {
 let a = '2';
 let b = '3';
 
-a = parseInt(a); //не нашла решения в уроке, загуглтла
-b = parseInt(b);
-
-alert(a + b);
+alert( Namber(a) + Namber(b) );
 
 //task5
 
