@@ -1,81 +1,58 @@
-let password = 'пароль';
-let userPassword = prompt("Введите пароль");
-if (userPassword === password) {
-    alert("Пароль введен верно");
-  } else {
-    alert("Пароль введен неправильно");
-  }
+//task1
+
+//let i = 0;
+//while (i < 3) {
+//    console.log("Привет");
+//    i++;
+//}
 
 
 //task2
 
-let c = 2;
+//let i = 1;
+//while (i < 5) {
+//    console.log(i);
+//    i++;
+//}
 
-if (c > 0 && c < 10) {
-  console.log("Верно");
-} else {
-  console.log("Неверно");
-}
 
-//task3 
+//task3
 
-let d = 150;
-let e = 25;
+//let i = 7;
+//while (i<22) {
+//  console.log(i);
+//  i++;
+//}
 
-if (d > 100 || e > 100) {
-  console.log("Верно");
-} else {
-  console.log("Неверно");
-}
 
-//task4 
+//task4
 
-let a = '2';
-let b = '3';
+//const obj = {"Коля" : '200$', "Вася" : '300$', "Петя" : '400$'};
+//for (let key in obj) {
+//    console.log(key, obj[key]);
+//}
 
-alert( Namber(a) + Namber(b) );
 
 //task5
 
-let monthNumber = 12;
+//let n = 1000;
+//let num = 1;
+//do {
+//  n /=2;
+//  console.log(n);
+//  console.log(num);
+//  num++;
+//}
+//while (n >= 50);
 
-switch (monthNumber) {
-  case 1:
-    console.log("Зима");
-    break;
-  case 2:
-    console.log("Зима");
-    break;
-  case 3:
-    console.log("Весна");
-    break;
-  case 4:
-    console.log("Весна");
-    break;
-  case 5:
-    console.log("Весна");
-    break;
-  case 6:
-    console.log("Лето");
-    break;
-  case 7:
-    console.log("Лето");
-    break;
-  case 8:
-    console.log("Осень");
-    break;
-  case 9:
-    console.log("Осень");
-    break;
-  case 10:
-    console.log("Осень");
-    break;
-  case 11:
-    console.log("Зима");
-    break;
-  default:
-    if (monthNumber > 13) {
-      console.log("Некорректный ввод данных");
-    }
-}
 
+//task6
+
+//let firstFriday = 6;
+//let daysInMonth = 31;
+
+//for (let day = firstFriday;
+ //   day <= daysInMonth;
+ //   day += 7) {
+ //       console.log("Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.");
+//    }
