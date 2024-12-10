@@ -1,6 +1,10 @@
 *{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.html {
+    scroll-behavior: smooth;
 }
 
 $primary-color: #E1FF8F;
@@ -27,26 +31,32 @@ a {
     background-repeat: no-repeat;
     background-position: 63px 69px, 100% 0px, calc(100% - 344px) calc(100% - 149px);
     background-color: $primary-color;
+    height: 800px;
 
 
     &__text {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
 
-        &-big {
+        &_big {
             font-size: 64px;
             line-height: 78px;
             color: $colorText;
             padding-top: 196px;
+            max-width: 768px;
         }
 
-        &-subtitle {
+        &_subtitle {
             font-size: 24px;
             line-height: 32px;
             color: $colorText;
             padding-top: 24px;
             font-weight: 400;
+            max-width: 720px;
         }
 
-        &-font {
+        &_font {
             font-size: 24px;
             line-height: 32px;
             font-weight: 600;
@@ -63,8 +73,8 @@ a {
         width: 247px;
         height: 66px;
         font-size: 24px;
+        font-family: Montserrat;
         margin-top: 48px;
-        margin-bottom: 246px;
     }
 
     &__button:hover {
@@ -74,169 +84,232 @@ a {
     }
 }
 
-.scrol-bar {
-    height: 90px;
-    background: #BCEC30;
-    padding: 27px 49px 27px 49px;
-    backdrop-filter: blur(50px);
-}
-
 .card-game {
-    background-color: #000000;
-    padding-bottom: 50px;
+    background-color: #202027;
     background-image: url(./img/Star4.png), url(./img/star5.png);
     background-repeat: no-repeat;
     background-position: 100% 77px, 25px 770px;
 
     &__text {
-        &-top {
+        &_top {
             color: white;
             padding-top: 94px;
             font-size: 64px;
             line-height: 78px;
         }
 
-        &-susubtitle {
+        &_subtitle {
             color: #FFFFFF;
             padding-top: 24px;
             font-size: 24px;
             line-height: 32px;
-        }
-    }
-
-    &__card {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        height: 1056px;
-        gap: 32px;
-        padding-top: 72px;
-        width: 1021px;
-       
-        &_game1 {
-            height: 473px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/Game1.png);
-            background-position: 100% calc(100% - 159px);
-            background-repeat: no-repeat;
-        }
-
-        &_game1:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_game2 {
-            height: 512px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game2.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 198px);
-        }
-
-        &_game2:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_game3 {
-            height: 473px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game3.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 159px);
-        }
-
-        &_game3:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_game4 {
-            height: 551px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            margin-top: -39px;
-            background-image: url(./img/game4.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 237px);
-        }
-
-        &_game4:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_game5 {
-            height: 512px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            background-image: url(./img/game5.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 198px);
-        }
-
-        &_game5:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_game6 {
-            height: 551px;
-            width: 378px;
-            background-color: #FFFFFF;
-            grid-column: span 4;
-            border-radius: 30px;
-            margin-top: -39px;
-            background-image: url(./img/game6.png);
-            background-repeat: no-repeat;
-            background-position: 100% calc(100% - 237px);
-        }
-
-        &_game6:hover {
-            transform: scale(1.1);
-            transition: 1s;
-        }
-
-        &_namber {
-            color: #202027;
-            margin-top: 354px;
-            margin-left: 32px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 52.58px;
-            background: rgb(247, 247, 247);
-            width: 108px;
-            padding: 8px 16px 10px 16px;
-            text-align: center;
-        }
-
-        &_name {
-            font-size: 32px;
-            line-height: 39px;
-            padding-top: 16px;
-            color: #202027;
-            text-decoration: none;
-            padding-left: 32px;
-            font-weight: 700;
+            max-width: 788px;
         }
     }
 }
 
 
+.game {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    padding-top: 72px;
 
+    &__card {
+        grid-column: span 4;
+        border-radius: 30px;
+        
+    
+        &_one {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 473px;
+        }
 
+        &_one:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
 
+        &_two {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 512px;
+        }
 
+        &_two:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        &_three {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 473px;
+        }
+
+        &_three:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        &_four {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 551px;
+            margin-top: -39px;
+        }
+
+        &_four:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        &_five {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 512px;
+        }
+
+        &_five:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+        &_six {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            width: 378px;
+            height: 551px;
+            margin-top: -39px;
+        }
+
+        &_six:hover {
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+    }
+}     
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 32px 32px 36px 32px;
+    gap: 16px;
+    
+    &__namber {
+        color: #202027;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 52.58px;
+        width: 108px;
+        padding: 8px 16px 10px 16px;
+        text-align: center;
+        background-color: #F7F7F7;
+    }
+
+    &__name {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 39px;
+        color: #202027;
+    }
+
+}
+
+.mini-game {
+    background-color: #202027;
+    background-image: url(./img/Group1minigame.png), url(./img/Group2minigame.png);
+    background-position: 1281px 93px, 1249px calc(100% - 45px);
+    background-repeat: no-repeat;
+    padding-top: 98px;
+    padding-bottom: 144px;
+    
+    &__text {
+        color: #FFFFFF;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 78px;
+    }
+
+    &__card {
+        padding-top: 72px;
+        display: flex;
+        gap: 32px;
+        flex-direction: column;
+
+    }
+
+    .card {
+        max-width: 1200px;
+        height: 500px;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        display: flex;
+        
+
+            &__left {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                gap: 24px;
+                padding: 48px;
+                max-width: 505px;
+
+                &__name {
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 59px;
+                    color: rgb(32, 32, 39);
+                }
+
+                &__description {
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 32px;
+                    color: #202027;
+                }
+
+                &__button {
+                    border-radius: 60px;
+                    background: #202027;
+                    width: 247px;
+                    height: 66px;
+                    margin-top: 12px;
+                    color: rgb(255, 255, 255);
+                    font-family: Montserrat;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+    }       
+}
+
+.footer {
+    background: #BDED35;
+
+    &__text {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        text-align: center;
+        padding-top: 61px;
+        padding-bottom: 60px;
+    }
+}
+
+@import 'mobile';
