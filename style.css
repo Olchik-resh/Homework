@@ -70,7 +70,7 @@ a {
 }
 
 .card-game {
-  background-color: #000000;
+  background-color: #202027;
   background-image: url(./img/Star4.png), url(./img/star5.png);
   background-repeat: no-repeat;
   background-position: 100% 77px, 25px 770px;
@@ -81,7 +81,7 @@ a {
   font-size: 64px;
   line-height: 78px;
 }
-.card-game__text-subtitle {
+.card-game__text_subtitle {
   color: #FFFFFF;
   padding-top: 24px;
   font-size: 24px;
@@ -187,7 +187,7 @@ a {
 }
 
 .mini-game {
-  background-color: #000000;
+  background-color: #202027;
   background-image: url(./img/Group1minigame.png), url(./img/Group2minigame.png);
   background-position: 1281px 93px, 1249px calc(100% - 45px);
   background-repeat: no-repeat;
@@ -241,7 +241,7 @@ a {
 }
 .mini-game .card-content__button {
   border-radius: 60px;
-  background: rgb(32, 32, 39);
+  background: #202027;
   width: 247px;
   height: 66px;
   margin-top: 12px;
