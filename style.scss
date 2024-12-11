@@ -11,7 +11,6 @@ $primary-color: #E1FF8F;
 $colorText:  #202027; 
 
 .body {
-    
     font-family: "Montserrat", sans-serif;
 }
 
@@ -26,7 +25,6 @@ a {
   }
 
 .header {
-
     background-image: url(./img/star1.png), url(./img/star2.png), url(./img/star3.png);
     background-repeat: no-repeat;
     background-position: 63px 69px, 100% 0px, calc(100% - 344px) calc(100% - 149px);
@@ -294,6 +292,12 @@ a {
                     font-family: Montserrat;
                     font-size: 24px;
                     font-weight: 600;
+                }
+
+                &__button:hover {
+                    background: white;
+                    color: #000000;
+                    cursor: pointer;
                 }
             }
     }       
