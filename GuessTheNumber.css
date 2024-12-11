@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.header {
+  background-image: url(./img/star1.png);
+  background-repeat: no-repeat;
+  background-position: 63px 65px;
+  background-color: #E1FF8F;
+  height: 150px;
+}
+.header__button {
+  color: #FFFFFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+  background: none;
+  border: none;
+}
+.header__button:hover {
+  color: #202027;
+  cursor: pointer;
+}
+
+.game {
+  background: #E1FF8F;
+}
+.game-left {
+  max-width: 1200px;
+  height: 500px;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.game .game-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 24px;
+  padding: 48px;
+  max-width: 505px;
+}
+.game .game-content__name {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 59px;
+  color: rgb(32, 32, 39);
+}
+.game .game-content__description {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #202027;
+}
+.game .game-content__button {
+  border-radius: 60px;
+  background: #202027;
+  width: 247px;
+  height: 66px;
+  margin-top: 12px;
+  color: rgb(255, 255, 255);
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+}
+.game .game-content__button:hover {
+  background: white;
+  color: #000000;
+  cursor: pointer;
+}
+
+.footer {
+  background: #E1FF8F;
+}
+.footer__text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+  padding-top: 61px;
+  padding-bottom: 60px;
+}/*# sourceMappingURL=GuessTheNumber.css.map */
