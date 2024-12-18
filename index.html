@@ -39,7 +39,7 @@
 
         <div class="game">
 
-            <a href="GuessTheNumber.html" class="game__card">
+            <a href="#guess" class="game__card">
                 <article class="game__card game__card_one">
                     <img src="./img/Game1.png" alt="игра1">
                     <div class="card-text">
@@ -69,7 +69,7 @@
                 </article>
             </a>
 
-            <a href="#quiz" class="game__card">
+            <a href="#stone" class="game__card">
                 <article class="game__card game__card_four">
                     <img src="./img/game4.png" alt="игра4">
                     <div class="card-text">
@@ -79,7 +79,7 @@
                 </article>
             </a>
 
-            <a href="#stone" class="game__card">
+            <a href="#quiz" class="game__card">
                 <article class="game__card game__card_five">
                     <img src="./img/game5.png" alt="игра5">
                     <div class="card-text">
@@ -107,25 +107,25 @@
 
         <div class="mini-game__card">
 
-            <article id="#guess" class="card card__left">
+            <article id="guess" class="card card__left">
                 <img src="./img/guess.png" alt="угадай">
                 <div class="card-content">
                     <h3 class="card-content__name">Угадай число</h3>
                     <p class="card-content__description">Попробуй угадать&nbspслучайное<br>число от 1 до 100.</p>
-                    <button class="card-content__button">Играть!</button>
+                    <button onclick="guessTheNumber()" class="card-content__button">Играть!</button>
                 </div>
             </article>    
         
-            <article id="#arithmetic" class="card">
+            <article id="arithmetic" class="card">
                 <img src="./img/arithmetic.png" alt="arithmetic">
                 <div class="card-content">
                     <h3 class="card-content__name">Простая арифметика</h3>
                     <p class="card-content__description">Попробуй решить простые арифметические задачи.</p>
-                    <button class="card-content__button">Играть!</button>
+                    <button onclick="arithmetic()" class="card-content__button">Играть!</button>
                 </div>
             </article>
 
-            <article id="#textover" class="card card__left">
+            <article id="textover" class="card card__left">
                 <img src="./img/textover.png" alt="textover">
                 <div class="card-content">
                     <h3  class="card-content__name">Переверни текст</h3>
@@ -134,7 +134,7 @@
                 </div>
             </article>
 
-            <article id="#quiz" class="card">
+            <article id="quiz" class="card">
                 <img src="./img/quiz.png" alt="quiz">
                 <div class="card-content">
                     <h3 class="card-content__name">Викторина</h3>
@@ -143,7 +143,7 @@
                 </div>
             </article>
 
-            <article id="#stone" class="card card__left">
+            <article id="stone" class="card card__left">
                 <img src="./img/stone.png" alt="stone">
                 <div class="card-content">
                     <h3 class="card-content__name">Камень,<br>ножницы,<br>бумага</h3>
@@ -152,7 +152,7 @@
                 </div>
             </article>
 
-            <article id="#random" class="card">
+            <article id="random" class="card">
                 <img src="./img/random.png" alt="random">
                 <div class="card-content">
                     <h3 class="card-content__name">Генератор случайных<br>цветов</h3>

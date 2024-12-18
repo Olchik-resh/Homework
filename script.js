@@ -1,108 +1,260 @@
-//task 1
+//Game1
 
-// function max (a, b) {
-//     if (a < b) {
-//         return a;
-//     } else {
-//         return b;
-//         }
+function guessTheNumber(question) {
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    alert("Я загадал число от 1 до 100. Угадайте его!");
+  
+    do {
+      let guess = prompt("Введите ваше предположение");
+      guess = Number(guess);
+  
+      if (guess == randomNumber) {
+        alert(`Вы угадали! Число было ${randomNumber}`);
+        break;
+      } else if (guess < randomNumber) {
+        alert(`${guess} меньше загаданного числа`);
+      } else {
+        alert(`${guess} больше загаданного числа`);
+      }
+    } while (true);
+  }
+
+
+//Game2
+
+function arithmetic() {
+  const operations = ['+', '-', '*', '/'];
+  let operation = operations[Math.floor(Math.random() * operations.length)];
+
+  let a = Math.floor(Math.random() * 100) + 1;
+  let b = Math.floor(Math.random() * 100) + 1;
+
+  if (operation === '+') {
+      task = `Сложите ${a} и ${b}`;
+  } else if (operation === '-') {
+      task = `Вычтите ${a} из ${b}`;
+  } else if (operation === '*') {
+      task = `${a} умножить на ${b}`;
+  } else {
+      task = `${a} разделить на ${b}`;
+  }
+
+  userAnswer = prompt(task);
+
+  correctAnswer = calculateCorrectAnswer(userAnswer);
+  if (userAnswer === correctAnswer) {
+      alert(`Верный ответ!`);
+  } else {
+      alert(`Ошибка!`);
+  }
+}
+
+function calculateCorrectAnswer(input) {
+  switch (input) {
+      case '+':
+          return eval(`${a} + ${b}`);
+      case '-':
+          return eval(`${a} - ${b}`);
+      case '*':
+          return eval(`${a} * ${b}`);
+      case '/':
+          return eval(`${a} / ${b}`);
+  }
+}
+
+
+
+
+//task1 
+
+// let array = [1, 5, 4, 10, 0, 3];
+
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] === 10) {
+//     console.log(array[i]);
+//     break;
+//   } else {
+//     console.log(array[i]);
+//   }
 // }
-
-// console.log(max(8, 4));
-// console.log(max(6, 6));
 
 
 //task2
 
-// function isEven(number) {
-//     if (number % 2 == 0) {
-//         return 'Число четное';
-//       } else {
-//         return 'Число нечетное';
-//       }
-//     }
+// let array = [1, 5, 4, 10, 0, 3];
+
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i] === 4) {
+//     console.log(i);
+//     break;
+//   }
+// }
 
 
 //task3
 
-// function squareOfTheNumber(num) {
-//     console.log(num * num);
-// }
-// squareOfTheNumber(5);
+// let array = [1, 3, 5, 10, 20];
 
-
-// function squareOfTheNumber(num) {
-//     return (num * num);
-// }
-
-// const result = squareOfTheNumber(5);
-// console.log(result);
+// console.log(array.join(' '));
 
 
 //task4
 
-// function enterTheAge(question) {
-//     let age = prompt (question);
-//     if (age < 0) {
-//       alert('Вы ввели неправильное значение');
-//     } else if (age >= 0 && age <= 12) {
-//       alert('Привет, друг!');
-//     } else {
-//       alert('Добро пожаловать!');
-//     }
+// let array = [];
+
+// for (let i = 0; i < 3; i++) {
+//   array[i] = [];
+//   for (let j = 0; j < 3; j++) {
+//     array[i][j] = 1;
+//   }
 // }
 
-// enterTheAge('Сколько вам лет?');
+// console.log(array);
 
 
 //task5
 
-// function Numbers(a, b) {
-//     if (isNaN(a) || isNaN(b)) {
-//       return 'Одно или оба значения не являются числом';
-//     } else {
-//       let result = a * b;
-//       return result;
-//     }
-//   }
+// let array = [1, 1, 1];
 
-//   console.log(Numbers(8, 4));
+// array.push(2, 2, 2);
+
+// console.log(array);
+
+
+//task6
+
+// let array = [9, 8, 7, 'a', 6, 5];
+
+// array.sort((a, b) => a - b); // Сортировка чисел по возрастанию
+
+// // Удаление буквы 'a' из массива
+// array = array.filter(item => item !== 'a');
+
+// console.log(array);
+
+
+//task7
+
+// let array = [9, 8, 7, 6, 5];
+
+// var userInput = prompt("Введите число:");
+
+// if (userInput === null) {
+//   alert("Пользователь не ввёл число.");
+// } else {
+//   var number = parseInt(userInput);
+
+//   if (array.includes(number)) {
+//     alert("Угадал");
+//   } else {
+//     alert("Не угадал");
+//   }
+// }
+
+
+//task8
+
+// let str = 'abcdef';
+// let res = str.split('').reverse().join('');
+
+// console.log(res);
+
+
+//task9
+
+// let arr = [
+//     [1, 2, 3],
+//     [4, 5, 6]
+//   ];
   
-
-//Task6
-
-// function cubeNumber(num) {
-//     if (isNaN(num)) {
-//       return 'Переданный параметр не является числом';
-//     } else {
-//       let result = num * num * num;
-//       return `Число ${num} в кубе равно ${result}`;
-//     }
-//   }
-
-//   for (let i = 0; i <= 10; i++) {
-//     console.log(cubeNumber(i));
-//   }
+//   console.log([...arr[0], ...arr[1]]);
 
 
-//Task7
+//task10
 
-// function Circle(radius) {
-//     this.radius = radius;
+// let arr = [];
+// for (let i = 1; i <= 10; i++) {
+//   arr.push(i);
+// }
+
+// for (let i = 0; i < arr.length - 1; i++) {
+//   console.log(arr[i] + arr[i + 1]);
+// }
+
+
+//task11
+
+// function squareArr(arr) {
+//     return arr.map(num => num ** 2);
 //   }
   
-//   Circle.prototype.getArea = function() {
-//     return Math.PI * this.radius * this.radius;
+//   const squaredArray = squareArr([1, 2, 3, 4, 5]);
+//   console.log(squaredArray); 
+
+
+//task12
+
+// function getWord(arr) {
+//     return arr.map(word => word.length);
+//   }
+  
+//   const words = ['apple', 'banana', 'orange'];
+//   console.log(getWord(words)); 
+
+
+//task13
+
+// function NegativeNumbers(arr) {
+//     return arr.filter(num => num < 0);
+//   }
+  
+//   const numbers = [1, -2, 3, -4, 5];
+//   console.log(NegativeNumbers(numbers));
+
+
+//task14
+
+// const generateArray = () => {
+//     const array = [];
+  
+//     for (let i = 0; i < 10; i++) {
+//       array.push(Math.floor(Math.random() * 11));
+//     }
+  
+//     return array;
 //   };
   
-//   Circle.prototype.getPerimeter = function() {
-//     return 2 * Math.PI * this.radius;
+//   const evenNumbersArray = array => array.filter(num => num % 2 === 0);
+  
+//   const main = () => {
+//     const originalArray = generateArray();
+//     console.log('Исходный массив:', originalArray);
+//     const evenArray = evenNumbersArray(originalArray);
+//     console.log('Массив с чётными значениями:', evenArray);
 //   };
   
-//   let circle1 = new Circle(5);
-//   console.log(`Площадь круга circle1: ${circle1.getArea()}`); 
-//   console.log(`Периметр окружности circle1: ${circle1.getPerimeter()}`); 
+//   main();
+
+
+//task15
+
+// const generateArray = () => {
+//     const array = [];
   
-//   let circle2 = new Circle(10);
-//   console.log(`Площадь круга circle2: ${circle2.getArea()}`);
-//   console.log(`Периметр окружности circle2: ${circle2.getPerimeter()}`); 
+//     for (let i = 0; i < 6; i++) {
+//       array.push(Math.floor(Math.random() * 10) + 1);
+//     }
+  
+//     return array;
+//   };
+  
+//   const main = () => {
+//     const originalArray = generateArray();
+//     console.log('Исходный массив:', originalArray);
+  
+//     const sum = originalArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+//     const average = sum / originalArray.length;
+//     console.log(`Среднее арифметическое: ${average}`);
+//   };
+  
+//   main();
