@@ -39,27 +39,27 @@ function arithmetic() {
       task = `${a} разделить на ${b}`;
   }
 
-  userAnswer = prompt(task);
+  userAnswer = Number(prompt(task));
 
-  correctAnswer = calculateCorrectAnswer(userAnswer);
+  correctAnswer = calculateCorrectAnswer(operation, a, b);
   if (userAnswer === correctAnswer) {
       alert(`Верный ответ!`);
   } else {
-      alert(`Ошибка!`);
+      alert(`Ошибка! Правильный ответ: ${correctAnswer}`);
+  }
+
+function calculateCorrectAnswer(operation, a, b) {
+  switch (operation) {
+      case '+':
+          return a + b;
+      case '-':
+          return a - b;
+      case '*':
+          return a * b;
+      case '/':
+          return Math.floor(a / b); 
   }
 }
-
-function calculateCorrectAnswer(input) {
-  switch (input) {
-      case '+':
-          return eval(`${a} + ${b}`);
-      case '-':
-          return eval(`${a} - ${b}`);
-      case '*':
-          return eval(`${a} * ${b}`);
-      case '/':
-          return eval(`${a} / ${b}`);
-  }
 }
 
 
