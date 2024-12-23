@@ -32,7 +32,7 @@ function arithmetic() {
   if (operation === '+') {
       task = `Сложите ${a} и ${b}`;
   } else if (operation === '-') {
-      task = `Вычтите ${a} из ${b}`;
+      task = `Вычтите ${b} из ${a}`;
   } else if (operation === '*') {
       task = `${a} умножить на ${b}`;
   } else {
@@ -62,199 +62,172 @@ function calculateCorrectAnswer(operation, a, b) {
 }
 }
 
+//Game3
+
+function reverseAndPrintText() {
+  // Запрос текста от пользователя
+  const userInput = prompt("Введите текст:");
+
+  // Переворачивание текста
+  const reversedText = userInput.split("").reverse().join("");
+
+  // Вывод перевернутого текста
+  alert("Перевернутый текст: " + reversedText);
+}
+
+
+//Game4
+const quiz = [
+  {
+      question: "Какой цвет небо?",
+      options: ["1. Красный", "2. Синий", "3. Зеленый"],
+      correctAnswer: 2 // номер правильного ответа
+  },
+  {
+      question: "Сколько дней в неделе?",
+      options: ["1. Шесть", "2. Семь", "3. Восемь"],
+      correctAnswer: 2
+  },
+  {
+      question: "Сколько у человека пальцев на одной руке?",
+      options: ["1. Четыре", "2. Пять", "3. Шесть"],
+      correctAnswer: 2
+  }
+];
+
+function checkAnswer(userAnswer, correctAnswer) {
+  return userAnswer === correctAnswer;
+}
+
+let correctAnswers = 0;
+
+function runQuiz() {
+  for (let i = 0; i < quiz.length; i++) {
+    const question = quiz[i];
+    alert(question.question);
+
+    const userAnswer = parseInt(prompt(question.options.join(", ")));
+
+    if (userAnswer === quiz[i].correctAnswer) {
+      alert("Правильно!");
+    } else {
+      alert("Неправильно.");
+    }
+  }
+
+  alert(`Вы ответили правильно на ${quiz.reduce((acc, curr) => acc + (curr.correctAnswer == userAnswer ? 1 : 0), 0)} вопросов.`);
+}
 
 
 
-//task1 
 
-// let array = [1, 5, 4, 10, 0, 3];
+//Task1
 
-// for (let i = 0; i < array.length; i++) {
-//   if (array[i] === 10) {
-//     console.log(array[i]);
-//     break;
-//   } else {
-//     console.log(array[i]);
-//   }
-// }
+let myString = 'js';
+console.log(myString.toUpperCase());
 
 
-//task2
+//Task2
 
-// let array = [1, 5, 4, 10, 0, 3];
+function filterArray(array, string) {
+  return array.filter(item => item.toLowerCase().startsWith(string.toLowerCase()));
+}
 
-// for (let i = 0; i < array.length; i++) {
-//   if (array[i] === 4) {
-//     console.log(i);
-//     break;
-//   }
-// }
+// Пример использования функции
+let fruits = ['яблоко', 'банан', 'вишня', 'груша'];
+let searchString = 'яб';
 
-
-//task3
-
-// let array = [1, 3, 5, 10, 20];
-
-// console.log(array.join(' '));
+console.log(filterArray(fruits, searchString));
 
 
-//task4
+//Task3
 
-// let array = [];
+let roundedDown = Math.floor(32.58884);
+console.log (roundedDown);
 
-// for (let i = 0; i < 3; i++) {
-//   array[i] = [];
-//   for (let j = 0; j < 3; j++) {
-//     array[i][j] = 1;
-//   }
-// }
+let roundedUp = Math.ceil(32.58884);
+console.log(roundedUp);
 
-// console.log(array);
+let roundedNearest = Math.round(32.58884);
+console.log(roundedNearest);
 
 
-//task5
+//Task4
 
-// let array = [1, 1, 1];
+let numbers = [52, 53, 49, 77, 21, 32];
 
-// array.push(2, 2, 2);
+let minValue = Math.min(...numbers);
 
-// console.log(array);
+let maxValue = Math.max(...numbers);
 
-
-//task6
-
-// let array = [9, 8, 7, 'a', 6, 5];
-
-// array.sort((a, b) => a - b); // Сортировка чисел по возрастанию
-
-// // Удаление буквы 'a' из массива
-// array = array.filter(item => item !== 'a');
-
-// console.log(array);
+console.log("Минимальное значение: " + minValue);
+console.log("Максимальное значение: " + maxValue);
 
 
-//task7
+//Task5
 
-// let array = [9, 8, 7, 6, 5];
+function getRandomNumber() {
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
+  console.log(randomNumber);
+}
 
-// var userInput = prompt("Введите число:");
-
-// if (userInput === null) {
-//   alert("Пользователь не ввёл число.");
-// } else {
-//   var number = parseInt(userInput);
-
-//   if (array.includes(number)) {
-//     alert("Угадал");
-//   } else {
-//     alert("Не угадал");
-//   }
-// }
+getRandomNumber();
 
 
-//task8
+//Task6
 
-// let str = 'abcdef';
-// let res = str.split('').reverse().join('');
+function getRandomArray(n) {
+  const randomArray = [];
 
-// console.log(res);
+  for (let i = 0; i < n / 2; i++) {
+    randomArray.push(Math.floor(Math.random() * n));
+  }
+
+  return randomArray;
+}
+
+console.log(getRandomArray(5));
+
+
+//Task7
+
+function getRandomNumberInRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(getRandomNumberInRange(50, 100));
+
+
+//Task8
+
+console.log(new Date());
 
 
 //task9
 
-// let arr = [
-//     [1, 2, 3],
-//     [4, 5, 6]
-//   ];
-  
-//   console.log([...arr[0], ...arr[1]]);
+let currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 73);
+console.log(currentDate);
 
 
-//task10
+//Task10
 
-// let arr = [];
-// for (let i = 1; i <= 10; i++) {
-//   arr.push(i);
-// }
+function formatDate(date) {
+  let day = date.getDate();
+  let monthIndex = date.getMonth();
+  const months = [
+    'января', 'февраля', 'марта',
+    'апреля', 'мая', 'июня',
+    'июля', 'августа', 'сентября',
+    'октября', 'ноября', 'декабря'
+  ];
+  let year = date.getFullYear();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
 
-// for (let i = 0; i < arr.length - 1; i++) {
-//   console.log(arr[i] + arr[i + 1]);
-// }
+  return `Дата: ${day} ${months[monthIndex]} ${year} — это ${["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"][date.getDay()]}.\n` +
+    `Время: ${hours}:${minutes}:${seconds}`;
+}
 
-
-//task11
-
-// function squareArr(arr) {
-//     return arr.map(num => num ** 2);
-//   }
-  
-//   const squaredArray = squareArr([1, 2, 3, 4, 5]);
-//   console.log(squaredArray); 
-
-
-//task12
-
-// function getWord(arr) {
-//     return arr.map(word => word.length);
-//   }
-  
-//   const words = ['apple', 'banana', 'orange'];
-//   console.log(getWord(words)); 
-
-
-//task13
-
-// function NegativeNumbers(arr) {
-//     return arr.filter(num => num < 0);
-//   }
-  
-//   const numbers = [1, -2, 3, -4, 5];
-//   console.log(NegativeNumbers(numbers));
-
-
-//task14
-
-// const generateArray = () => {
-//     const array = [];
-  
-//     for (let i = 0; i < 10; i++) {
-//       array.push(Math.floor(Math.random() * 11));
-//     }
-  
-//     return array;
-//   };
-  
-//   const evenNumbersArray = array => array.filter(num => num % 2 === 0);
-  
-//   const main = () => {
-//     const originalArray = generateArray();
-//     console.log('Исходный массив:', originalArray);
-//     const evenArray = evenNumbersArray(originalArray);
-//     console.log('Массив с чётными значениями:', evenArray);
-//   };
-  
-//   main();
-
-
-//task15
-
-// const generateArray = () => {
-//     const array = [];
-  
-//     for (let i = 0; i < 6; i++) {
-//       array.push(Math.floor(Math.random() * 10) + 1);
-//     }
-  
-//     return array;
-//   };
-  
-//   const main = () => {
-//     const originalArray = generateArray();
-//     console.log('Исходный массив:', originalArray);
-  
-//     const sum = originalArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-//     const average = sum / originalArray.length;
-//     console.log(`Среднее арифметическое: ${average}`);
-//   };
-  
-//   main();
+console.log(formatDate(new Date()));
