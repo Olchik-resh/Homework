@@ -77,11 +77,12 @@ function reverseAndPrintText() {
 
 
 //Game4
+
 const quiz = [
   {
       question: "Какой цвет небо?",
       options: ["1. Красный", "2. Синий", "3. Зеленый"],
-      correctAnswer: 2 // номер правильного ответа
+      correctAnswer: 2 
   },
   {
       question: "Сколько дней в неделе?",
@@ -120,114 +121,124 @@ function runQuiz() {
 
 
 
+//Game 5
+
+
+const choices = ['камень', 'ножницы', 'бумага'];
+
+function playGame() {
+  // Генерация случайного выбора компьютера
+  let computerChoice = ["камень", "ножницы", "бумага"][Math.floor(Math.random() * 3)];
+
+  alert('Выберите "камень", "ножницы" или "бумага":');
+  let userChoice = prompt().toLowerCase();
+
+  // Определение победителя
+  let result = (userChoice === computerChoice) ? 'Ничья' :
+    ((userChoice === 'камень' && computerChoice === 'ножницы') ||
+      (userChoice === 'ножницы' && computerChoice === 'бумага') ||
+      (userChoice === 'бумага' && computerChoice === 'камень')) ? userChoice + ' победил!' : computerChoice + ' победил...';
+
+  alert(`${userChoice} против ${computerChoice}`);
+  alert(result);
+}
+
 
 //Task1
 
-let myString = 'js';
-console.log(myString.toUpperCase());
+const people = [
+  { name: 'Глеб', age: 29 },
+  { name: 'Анна', age: 17 },
+  { name: 'Олег', age: 7 },
+  { name: 'Оксана', age: 47 }
+];
+
+people.sort((a, b) => {
+ if (a.age < b.age) {
+   return -1;
+ } else if (a.age > b.age) {
+   return 1;
+ }
+ return 0;
+});
+
+console.log(people);
 
 
-//Task2
+//task2
 
-function filterArray(array, string) {
-  return array.filter(item => item.toLowerCase().startsWith(string.toLowerCase()));
+function isPositive(num) {
+  return num > 0;
 }
 
-// Пример использования функции
-let fruits = ['яблоко', 'банан', 'вишня', 'груша'];
-let searchString = 'яб';
-
-console.log(filterArray(fruits, searchString));
-
-
-//Task3
-
-let roundedDown = Math.floor(32.58884);
-console.log (roundedDown);
-
-let roundedUp = Math.ceil(32.58884);
-console.log(roundedUp);
-
-let roundedNearest = Math.round(32.58884);
-console.log(roundedNearest);
-
-
-//Task4
-
-let numbers = [52, 53, 49, 77, 21, 32];
-
-let minValue = Math.min(...numbers);
-
-let maxValue = Math.max(...numbers);
-
-console.log("Минимальное значение: " + minValue);
-console.log("Максимальное значение: " + maxValue);
-
-
-//Task5
-
-function getRandomNumber() {
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
-  console.log(randomNumber);
+function isMale(person) {
+  return person.gender === 'male';
 }
 
-getRandomNumber();
-
-
-//Task6
-
-function getRandomArray(n) {
-  const randomArray = [];
-
-  for (let i = 0; i < n / 2; i++) {
-    randomArray.push(Math.floor(Math.random() * n));
+function filter(array, ruleFunction) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (ruleFunction(array[i])) {
+      result.push(array[i]);
+    }
   }
-
-  return randomArray;
+  return result;
 }
 
-console.log(getRandomArray(5));
+console.log(filter([3, -4, 1, 9], isPositive)); // [3, 1, 9]
+
+const peopleGender = [
+  { name: 'Глеб', gender: 'male' },
+  { name: 'Анна', gender: 'female' },
+  { name: 'Олег', gender: 'male' },
+  { name: 'Оксана', gender: 'female' }
+];
+
+console.log(filter(peopleGender, isMale));
 
 
-//Task7
+//task3
 
-function getRandomNumberInRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+let intervalId;
+
+function printDate() {
+  console.log(new Date());
 }
 
-console.log(getRandomNumberInRange(50, 100));
-
-
-//Task8
-
-console.log(new Date());
-
-
-//task9
-
-let currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 73);
-console.log(currentDate);
-
-
-//Task10
-
-function formatDate(date) {
-  let day = date.getDate();
-  let monthIndex = date.getMonth();
-  const months = [
-    'января', 'февраля', 'марта',
-    'апреля', 'мая', 'июня',
-    'июля', 'августа', 'сентября',
-    'октября', 'ноября', 'декабря'
-  ];
-  let year = date.getFullYear();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
-
-  return `Дата: ${day} ${months[monthIndex]} ${year} — это ${["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"][date.getDay()]}.\n` +
-    `Время: ${hours}:${minutes}:${seconds}`;
+function startTimer() {
+  intervalId = setInterval(printDate, 3000); // Запускаем таймер на 3 секунды
+  setTimeout(() => {
+    clearInterval(intervalId); // Очищаем интервал после 30 секунд
+    console.log('30 секунд прошло');
+  }, 30000);
 }
 
-console.log(formatDate(new Date()));
+startTimer();
+
+
+//task4
+
+function delayForSecond(callback) {
+  setTimeout(callback, 1000);
+}
+
+delayForSecond(function () {
+ console.log('Привет, Глеб!');
+})
+
+
+//task5
+
+function delayForSecond(cb) {
+  setTimeout(() => {
+      console.log('Прошла одна секунда');
+      if(cb) {  cb(); }
+  }, 1000)
+}
+
+function sayHi (name) {
+  console.log('Привет, ${name}!');
+}
+
+delayForSecond(() => sayHi('Глеб'));
+
