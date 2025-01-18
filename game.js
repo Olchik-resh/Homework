@@ -62,16 +62,14 @@ function calculateCorrectAnswer(operation, a, b) {
 }
 }
 
+
 //Game3
 
 function reverseAndPrintText() {
-  // Запрос текста от пользователя
   const userInput = prompt("Введите текст:");
 
-  // Переворачивание текста
   const reversedText = userInput.split("").reverse().join("");
 
-  // Вывод перевернутого текста
   alert("Перевернутый текст: " + reversedText);
 }
 
@@ -123,17 +121,14 @@ function runQuiz() {
 
 //Game 5
 
-
 const choices = ['камень', 'ножницы', 'бумага'];
 
 function playGame() {
-  // Генерация случайного выбора компьютера
   let computerChoice = ["камень", "ножницы", "бумага"][Math.floor(Math.random() * 3)];
 
   alert('Выберите "камень", "ножницы" или "бумага":');
   let userChoice = prompt().toLowerCase();
 
-  // Определение победителя
   let result = (userChoice === computerChoice) ? 'Ничья' :
     ((userChoice === 'камень' && computerChoice === 'ножницы') ||
       (userChoice === 'ножницы' && computerChoice === 'бумага') ||
@@ -144,101 +139,17 @@ function playGame() {
 }
 
 
-//Task1
+//Game 6
 
-const people = [
-  { name: 'Глеб', age: 29 },
-  { name: 'Анна', age: 17 },
-  { name: 'Олег', age: 7 },
-  { name: 'Оксана', age: 47 }
-];
+const cardContentButtonEl = document.getElementById('randoms');
+const miniGame = document.querySelector ('.mini-game')
 
-people.sort((a, b) => {
- if (a.age < b.age) {
-   return -1;
- } else if (a.age > b.age) {
-   return 1;
- }
- return 0;
+cardContentButtonEl.addEventListener('click', () => {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  miniGame.style.backgroundColor = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+
+  alert('Нажмите OK, чтобы поменять цвет');
 });
-
-console.log(people);
-
-
-//task2
-
-function isPositive(num) {
-  return num > 0;
-}
-
-function isMale(person) {
-  return person.gender === 'male';
-}
-
-function filter(array, ruleFunction) {
-  const result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (ruleFunction(array[i])) {
-      result.push(array[i]);
-    }
-  }
-  return result;
-}
-
-console.log(filter([3, -4, 1, 9], isPositive)); // [3, 1, 9]
-
-const peopleGender = [
-  { name: 'Глеб', gender: 'male' },
-  { name: 'Анна', gender: 'female' },
-  { name: 'Олег', gender: 'male' },
-  { name: 'Оксана', gender: 'female' }
-];
-
-console.log(filter(peopleGender, isMale));
-
-
-//task3
-
-let intervalId;
-
-function printDate() {
-  console.log(new Date());
-}
-
-function startTimer() {
-  intervalId = setInterval(printDate, 3000); // Запускаем таймер на 3 секунды
-  setTimeout(() => {
-    clearInterval(intervalId); // Очищаем интервал после 30 секунд
-    console.log('30 секунд прошло');
-  }, 30000);
-}
-
-startTimer();
-
-
-//task4
-
-function delayForSecond(callback) {
-  setTimeout(callback, 1000);
-}
-
-delayForSecond(function () {
- console.log('Привет, Глеб!');
-})
-
-
-//task5
-
-function delayForSecond(cb) {
-  setTimeout(() => {
-      console.log('Прошла одна секунда');
-      if(cb) {  cb(); }
-  }, 1000)
-}
-
-function sayHi (name) {
-  console.log('Привет, ${name}!');
-}
-
-delayForSecond(() => sayHi('Глеб'));
-
