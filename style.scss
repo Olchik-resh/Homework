@@ -3,26 +3,38 @@
     padding: 0;
 }
 
-.html {
-    scroll-behavior: smooth;
-}
-
 $primary-color: #E1FF8F;
 $colorText:  #202027; 
 
 .body {
     font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+
 }
 
 a {
     text-decoration: none;
-  }
-
+}
 
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
-  }
+}
+
+button {
+    background:#202027;
+    color: #FFFFFF;
+    border: 1px solid rgb(32, 32, 39);
+    border-radius: 60px;
+    transition: 1s;
+    font-family: Montserrat;
+}
+  
+button:hover {
+    background: #FFFFFF;
+    color: #202027;
+    cursor: pointer;
+}
 
 .header {
     background-image: url(./img/star1.png), url(./img/star2.png), url(./img/star3.png);
@@ -31,13 +43,12 @@ a {
     background-color: $primary-color;
     height: 800px;
 
-
-    &__text {
+    &-text {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
 
-        &_big {
+        &__big {
             font-size: 64px;
             line-height: 78px;
             color: $colorText;
@@ -45,7 +56,7 @@ a {
             max-width: 768px;
         }
 
-        &_subtitle {
+        &__subtitle {
             font-size: 24px;
             line-height: 32px;
             color: $colorText;
@@ -54,7 +65,7 @@ a {
             max-width: 720px;
         }
 
-        &_font {
+        &__font {
             font-size: 24px;
             line-height: 32px;
             font-weight: 600;
@@ -62,23 +73,63 @@ a {
 
     }
     
-
     &__button {
-        background:#202027;
-        border: 1px solid rgb(32, 32, 39);
-        border-radius: 60px;
-        color: #FFFFFF;
         width: 247px;
         height: 66px;
         font-size: 24px;
-        font-family: Montserrat;
         margin-top: 48px;
+        background:#202027;
+        color: #FFFFFF;
+        border: 1px solid rgb(32, 32, 39);
+        border-radius: 60px;
+        transition: 1s;
+        font-family: Montserrat;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &_mob {
+            display: none;
+        }
     }
 
     &__button:hover {
-        background: white;
-        color: #000000;
+        background: #FFFFFF;
+        color: #202027;
         cursor: pointer;
+    }
+}
+
+.scrol-bar {
+    max-width: 100%;
+    height: 90px;
+    background-color: #BCEC30;
+    overflow: hidden;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-100%); } 
+  }
+
+.streak {
+    display: flex;
+    gap: 51px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    animation: scroll 10s infinite linear;
+ 
+    &__text {
+        text-transform: uppercase;
+        padding-top: 29px;
+    }
+
+    &__star {
+        padding-top: 29px;
     }
 }
 
@@ -89,14 +140,14 @@ a {
     background-position: 100% 77px, 25px 770px;
 
     &__text {
-        &_top {
+        &-top {
             color: white;
             padding-top: 94px;
             font-size: 64px;
             line-height: 78px;
         }
 
-        &_subtitle {
+        &-subtitle {
             color: #FFFFFF;
             padding-top: 24px;
             font-size: 24px;
@@ -105,7 +156,6 @@ a {
         }
     }
 }
-
 
 .game {
     display: grid;
@@ -118,43 +168,43 @@ a {
         border-radius: 30px;
         
     
-        &_one {
+        &_guess {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
             height: 473px;
         }
 
-        &_one:hover {
+        &_guess:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_two {
+        &_arithmetic {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
             height: 512px;
         }
 
-        &_two:hover {
+        &_arithmetic:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_three {
+        &_textover {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
             height: 473px;
         }
 
-        &_three:hover {
+        &_textover:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_four {
+        &_stone {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
@@ -162,24 +212,24 @@ a {
             margin-top: -39px;
         }
 
-        &_four:hover {
+        &_stone:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_five {
+        &_quiz {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
             height: 512px;
         }
 
-        &_five:hover {
+        &_quiz:hover {
             transform: scale(1.1);
             transition: 1s;
         }
 
-        &_six {
+        &_random {
             box-sizing: border-box;
             background: #FFFFFF;
             width: 378px;
@@ -187,7 +237,7 @@ a {
             margin-top: -39px;
         }
 
-        &_six:hover {
+        &_random:hover {
             transform: scale(1.1);
             transition: 1s;
         }
@@ -244,29 +294,30 @@ a {
         flex-direction: column;
 
     }
-
-    .card {
-        max-width: 1200px;
-        height: 500px;
-        background-color: #FFFFFF;
-        border-radius: 30px;
-        display: flex;
+}
+    
+.card {
+    max-width: 1200px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
         
 
-            &__left {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: space-between;
-            }
+        &__left {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
 
-            &-content {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                align-content: flex-start;
-                gap: 24px;
-                padding: 48px;
-                max-width: 505px;
+        &-content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 24px;
+            padding: 48px;
+            max-width: 505px;
 
                 &__name {
                     font-size: 48px;
@@ -283,37 +334,26 @@ a {
                 }
 
                 &__button {
-                    border-radius: 60px;
-                    background: #202027;
                     width: 247px;
                     height: 66px;
                     margin-top: 12px;
                     color: rgb(255, 255, 255);
-                    font-family: Montserrat;
                     font-size: 24px;
                     font-weight: 600;
                 }
-
-                &__button:hover {
-                    background: white;
-                    color: #000000;
-                    cursor: pointer;
-                }
-            }
-    }       
-}
+        }
+}       
 
 .footer {
     background: #BDED35;
-
-    &__text {
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 29px;
-        text-align: center;
-        padding-top: 61px;
-        padding-bottom: 60px;
-    }
+        &__text {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 29px;
+            text-align: center;
+            padding-top: 61px;
+            padding-bottom: 60px;
+        }
 }
 
 @import 'mobile';
