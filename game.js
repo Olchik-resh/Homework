@@ -226,7 +226,6 @@ function playGame() {
 document.addEventListener('keydown', function handleKeyDown(event) {
   if (event.key === 'Escape') {
     console.log('Игра отменена.');
-    alert('Пожалуйста, закройте окно вручную.');
   }
 });
 
