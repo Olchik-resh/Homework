@@ -1,48 +1,33 @@
 //Game1
 
-function guessTheNumber(question) {
-  let randomNumber = Math.floor(Math.random() * 100) + 1;
+function guessTheNumber() {
+  const randomNumber = Math.floor(Math.random() * 100) + 1;
   alert("Я загадал число от 1 до 100. Угадайте его!");
 
-  document.addEventListener('keydown', handleKeyDown);
+  while (true) {
+    const guessInput = prompt("Введите ваше число или нажмите 'Отмена' для выхода");
 
-  function handleKeyDown(event) {
-    if (event.key === 'Escape') {
-      cancelGame();
+    if (guessInput === null) {
+      alert("Игра отменена.");
+      break;
+    }
+
+    const guess = Number(guessInput);
+
+    if (isNaN(guess)) {
+      alert("Пожалуйста, введите число!");
+      continue;
+    }
+
+    if (guess < randomNumber) {
+      alert(`${guess} меньше загаданного числа.`);
+    } else if (guess > randomNumber) {
+      alert(`${guess} больше загаданного числа.`);
+    } else {
+      alert("Вы угадали! Поздравляю!");
+      break;
     }
   }
-
-  function cancelGame() {
-    alert('Игра отменена');
-    document.removeEventListener('keydown', handleKeyDown); 
-    document.body.removeChild(input); 
-  }
-
-  const input = document.createElement('input');
-  input.classList.add('guess-input');
-  document.body.appendChild(input);
-  input.style.position = 'fixed'; 
-  input.style.top = '50%';
-  input.style.left = '50%';
-  input.style.transform = 'translate(-50%, -50%)';
-  document.body.appendChild(input);
-  input.focus();
-
-  input.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      let guess = Number(input.value);
-      if (guess == randomNumber) {
-        alert(`Вы угадали! Число было ${randomNumber}`);
-        document.body.removeChild(input);
-        document.removeEventListener('keydown', handleKeyDown);
-      } else if (guess < randomNumber) {
-        alert(`${guess} меньше загаданного числа`);
-      } else {
-        alert(`${guess} больше загаданного числа`);
-      }
-      input.value = '';
-    }
-  });  
 }
 
 
@@ -70,12 +55,23 @@ function arithmetic() {
     task = `${a} разделить на ${b}`;
   }
 
-  userAnswer = Number(prompt(task));
-  correctAnswer = calculateCorrectAnswer(operation, a, b);
-  if (userAnswer === correctAnswer) {
-    alert(`Верный ответ!`);
-  } else {
-    alert(`Ошибка! Правильный ответ: ${correctAnswer}`);
+  while (true) {
+    const userAnswerInput = prompt(task);
+
+    if (userAnswerInput === null) {
+      alert("Игра отменена.");
+      break;
+    }
+
+    const userAnswer = Number(userAnswerInput);
+    const correctAnswer = calculateCorrectAnswer(operation, a, b);
+
+    if (userAnswer === correctAnswer) {
+      alert("Верный ответ!");
+      break;
+    } else {
+      alert(`Ошибка! Правильный ответ: ${correctAnswer}`);
+    }
   }
 }
 
@@ -88,20 +84,8 @@ function calculateCorrectAnswer(operation, a, b) {
     case '*':
       return a * b;
     case '/':
-      return Math.floor(a / b); 
+      return Math.floor(a / b);
   }
-
-  function handleKeyDown(event) {
-    if (event.key === 'Escape') {
-      cancelGame();
-    }
-  }
-
-  function cancelGame() {
-    alert('Операция отменена');
-    document.removeEventListener('keydown', handleKeyDown); 
-  }
-
 }
 
 //Game3
@@ -158,36 +142,37 @@ function checkAnswer(userAnswer, correctAnswer) {
 let correctAnswers = 0;
 
 function runQuiz() {
-  const cancelQuiz = () => {
-    alert("Игра отменена.");
-    correctAnswers = 0; 
-    document.removeEventListener('keyup', handleKeyUp); 
-  };
-
-  const handleKeyUp = (event) => {
-    if (event.key === 'Escape') {
-      cancelQuiz();
-    }
-  };
-
-  document.addEventListener('keyup', handleKeyUp);
-
   for (let i = 0; i < quiz.length; i++) {
     const question = quiz[i];
     alert(question.question);
 
-    const userAnswer = parseInt(prompt(question.options.join(", ")));
+    while (true) {
+      const userAnswerInput = prompt(question.options.join(", "));
 
-    if (checkAnswer(userAnswer, question.correctAnswer)) {
-      alert("Правильно!");
-      correctAnswers++;
-    } else {
-      alert("Неправильно.");
+      if (userAnswerInput === null) {
+        alert("Игра отменена.");
+        correctAnswers = 0;
+        return;
+      }
+
+      const userAnswer = parseInt(userAnswerInput);
+
+      if (!isNaN(userAnswer)) {
+        if (checkAnswer(userAnswer, question.correctAnswer)) {
+          alert("Правильно!");
+          correctAnswers++;
+          break;
+        } else {
+          alert("Неправильно.");
+          break;
+        }
+      } else {
+        alert("Пожалуйста, введите число!");
+      }
     }
   }
 
   alert(`Вы ответили правильно на ${correctAnswers} вопросов.`);
-  document.removeEventListener('keyup', handleKeyUp); 
 }
 
 //Game 5
